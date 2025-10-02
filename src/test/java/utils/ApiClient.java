@@ -15,4 +15,35 @@ public class ApiClient {
                 .when()
                 .get(endpoint);
     }
+
+    // Send POST request with body
+    public static Response post(String endpoint, Object body) {
+        return RestAssured
+                .given()
+                .baseUri(BASE_URL)
+                .header("Content-Type", "application/json")
+                .body(body)
+                .when()
+                .post(endpoint);
+    }
+
+    // Send PUT request with body
+    public static Response put(String endpoint, Object body) {
+        return RestAssured
+                .given()
+                .baseUri(BASE_URL)
+                .header("Content-Type", "application/json")
+                .body(body)
+                .when()
+                .put(endpoint);
+    }
+
+    // Send DELETE request
+    public static Response delete(String endpoint) {
+        return RestAssured
+                .given()
+                .baseUri(BASE_URL)
+                .when()
+                .delete(endpoint);
+    }
 }
