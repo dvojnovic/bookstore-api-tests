@@ -4,6 +4,7 @@
     <test name="Books API Tests">
         <classes>
             <class name="tests.BookApiTests"/>
+            <class name="tests.AuthorsApiTests"/>
         </classes>
     </test>
 </suite>

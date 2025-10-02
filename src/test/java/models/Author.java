@@ -1,0 +1,15 @@
+package models;
+
+public class Author {
+    public int id;
+    public int idBook;
+    public String firstName;
+    public String lastName;
+
+    public Author(int id, int idBook, String firstName, String lastName) {
+        this.id = id;
+        this.idBook = idBook;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+}
