@@ -57,4 +57,29 @@ public class BookApiTests {
 
         Assert.assertEquals(response.getStatusCode(), 200, "Expected status code 200");
     }
+
+    @Test
+    @Description("GET /Books/{id} – Non-existent ID should return 404")
+    public void testGetNonExistentBook() {
+        Response response = ApiClient.get("/Books/99999");
+        Assert.assertEquals(response.statusCode(), 404);
+    }
+
+    @Test
+    @Description("PUT /Books/{id} – Updating non-existent book")
+    public void testUpdateNonExistentBook() {
+        Book book = new Book(
+                99999,
+                "Ghost Book",
+                "This book does not exist",
+                100,
+                "Excerpt",
+                "2025-10-03T00:00:00"
+        );
+
+        Response response = ApiClient.put("/Books/99999", book);
+        Assert.assertEquals(response.statusCode(), 404);
+    }
+
+
 }

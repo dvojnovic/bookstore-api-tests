@@ -60,4 +60,11 @@ public class AuthorsApiTests {
         Response check = ApiClient.get("/Authors/" + createdAuthorId);
         Assert.assertEquals(check.statusCode(), 404);
     }
+
+    @Test
+    @Description("GET /Authors/{id} – Non-existent ID should return 404")
+    public void testGetNonExistentAuthor() {
+        Response response = ApiClient.get("/Authors/99999");
+        Assert.assertEquals(response.statusCode(), 404);
+    }
 }
