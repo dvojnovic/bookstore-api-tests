@@ -19,23 +19,26 @@ Automated tests for a RESTful Bookstore API, covering core operations such as re
 
 Book API Coverage:
 
-| Endpoint              | Description                                      |
-|-----------------------|--------------------------------------------------|
-| `GET /Books`          | Retrieve all books                               |
-| `GET /Books/{id}`     | Retrieve a specific book by ID                   |
-| `POST /Books`         | Create a new book                                |
-| `PUT /Books/{id}`     | Update an existing book                          |
-| `DELETE /Books/{id}`  | Delete a book                                    |
+| Endpoint                | Description                                    |
+|-------------------------|------------------------------------------------|
+| `GET /Books`            | Retrieve all books                             |
+| `GET /Books/{id}`       | Retrieve a specific book by ID                 |
+| `POST /Books`           | Create a new book                              |
+| `PUT /Books/{id}`       | Update an existing book                        |
+| `DELETE /Books/{id}`    | Delete a book                                  |
+| `GET /Books/99999`      | Retrieve non-existent book                     |
+| `PUT /Books/999999`     | Update non-existent book                       |
 
 Author API Coverage:
 
-| Endpoint              | Description                                      |
-|-----------------------|--------------------------------------------------|
+| Endpoint                | Description                                    |
+|-------------------------|------------------------------------------------|
 | `GET /Authors`          | Retrieve all authors                           |
 | `GET /Authors/{id}`     | Retrieve author by ID                          |
 | `POST /Authors`         | Create a new author                            |
 | `PUT /Authors/{id}`     | Update author                                  |
 | `DELETE /Authors/{id}`  | Delete author by ID                            |
+| `GET /Authors/99999`    | Retrieve non-existent author                   |
 
 Tests are chained using `dependsOnMethods` to ensure proper execution order.
 
